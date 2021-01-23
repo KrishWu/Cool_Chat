@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 
-.sent {
+.received {
   display:grid;
   grid-template-columns: 1fr 9fr;
 }
@@ -13,6 +13,21 @@ section {
   border-radius: 15px;
 }
 
+/* .mainContainer {
+  display: flex;
+  height: 500px;
+  flex-direction: column;
+} */
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: auto;
+  height: 200px;
+  /* flex: 1 1 auto; */
+}
+
 form {
   width: 50%;
   margin: auto;
@@ -20,7 +35,7 @@ form {
 
 .left img {
   border-radius: 50%;
-  width: 50%;
+  width: 70%;
   margin-bottom: 10px;
   margin-top: auto;
 }
@@ -31,7 +46,8 @@ form {
 }
 
 .userName {
-  font-size: 0.75vw;
+  font-size: 1.5vw;
+  color: rgb(178, 178, 178);
   margin-bottom: 2px;
 }
 
@@ -41,7 +57,7 @@ form {
 }
 
 .textContent {
-  font-size: 1.5vw;
+  font-size: 3vw;
   padding: 0.5vw 0.7vw;
   border-radius: 20px;
   margin: 5px auto 0px 5px;
@@ -67,11 +83,13 @@ h1 {
   margin: 0px;
   padding-top: 15px;
   padding-bottom: 3px;
+  font-size: 3vw;
 }
 
 form {
   margin: 0px;
   width: 100%;
+  font-size: 2vw;
 }
 
 input {
@@ -79,7 +97,27 @@ input {
   width: 100%;
   border-radius: 15px;
   padding: 5px;
-  margin-bottom: 5px;
+  margin-top: 20px;
+  margin-bottom: 14px;
+  height: 50px;
+  font-size: 1.2vw;
+}
+
+.sent {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.bubbleSent {
+  background-color: rgb(54,130,243);
+  color: white;
+}
+
+button {
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 1vw;
+  margin: auto;
 }
 
 * {

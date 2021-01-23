@@ -72,13 +72,14 @@ function ChatRoom() {
   const sendMessage = async (e) => {
     e.preventDefault();
 
-    const { uid, photoURL } = auth.currentUser;
+    const { uid, photoURL, displayName } = auth.currentUser;
 
     await messagesRef.add({
       text: formValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
-      photoURL
+      photoURL,
+      displayName
     })
 
     setFormValue('');
@@ -86,13 +87,16 @@ function ChatRoom() {
   }
 
   return (<>
-    <main>
+    {/* <div className="mainContainer"> */}
+      <main>
 
-      {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
+        {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
 
-      <span ref={dummy}></span>
+        <span ref={dummy}></span>
 
-    </main>
+      </main>
+    {/* </div> */}
+    
 
     <form onSubmit={sendMessage}>
 
@@ -104,11 +108,12 @@ function ChatRoom() {
   </>)
 }
 
-
-function ChatMessage(props) {
-  const { text, uid, photoURL } = props.message;
+const ReceivedMessage = (props) => {
+  const { text, uid, photoURL, displayName } = props.message;
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
+
+
 
   return (<>
     <div className={`message ${messageClass}`}>
@@ -116,11 +121,44 @@ function ChatMessage(props) {
         <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
       </div>
       <div className="right">
-        <p className="userName">Bob Smith</p>
+        <p className="userName">{displayName}</p>
         <p className="textContent">{text}</p>
       </div>
     </div>
   </>)
 }
+
+const SentMessage = (props) => {
+  const { text, uid, photoURL, displayName } = props.message;
+
+  const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
+
+
+
+  return (<>
+    <div className={`message ${messageClass}`}>
+      <div className="right">
+        <p className="textContent bubbleSent">{text}</p>
+      </div>
+    </div>
+  </>)
+}
+
+function ChatMessage(props) {
+  const {uid} = props.message;
+
+  if (uid === auth.currentUser.uid) {
+    return (
+      <SentMessage message={props.message}/>
+    )
+  }
+  else {
+    return (
+      <ReceivedMessage message={props.message}/>
+    )
+  }
+  
+}
+
 
 export default App;
