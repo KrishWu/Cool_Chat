@@ -22,10 +22,16 @@ section {
 main {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   overflow: auto;
-  height: 200px;
+  height: 70vh;
   /* flex: 1 1 auto; */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+main::-webkit-scrollbar {
+  display: none;
 }
 
 form {
