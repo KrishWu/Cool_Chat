@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://TechnoKyle27.github.io/Cool_Chat",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.5.0",
     "firebase": "^8.2.0",
