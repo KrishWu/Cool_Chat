@@ -171,7 +171,7 @@ button {
 
   header {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
   }
 
   h1 {
@@ -180,10 +180,20 @@ button {
     padding-left: 25px;
   }
 
+  h2 {
+    font-size: 15px;
+    text-align: left;
+    padding-bottom: 8px;
+  }
+
+  a {
+    margin-top: auto;
+  }
+
   button {
     border-radius: 15px;
     font-size: 15px;
     padding: 5px;
-    margin-top: auto;
+    margin-top: 15px;
   }
 }

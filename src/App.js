@@ -28,9 +28,9 @@ function App() {
     <div className="App">
       <header>
         <h1>Cool Chat!</h1>
-        <a href="https://krishwu.com" target="_blank" rel="noopener noreferrer">
-          <h2>by Krish Wu</h2>
-        </a>
+          <a href="https://krishwu.com" target="_blank" rel="noopener noreferrer">
+            <h2>by Krish Wu</h2>
+          </a>
         <SignOut />
       </header>
 
