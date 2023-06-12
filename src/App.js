@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import "./App.css";
 
 import firebase from "firebase/compat/app";
@@ -120,6 +120,7 @@ const ReceivedMessage = (props) => {
               photoURL ||
               "https://api.adorable.io/avatars/23/abott@adorable.png"
             }
+            alt="Avatar"
           />
         </div>
         <div className="right">
@@ -132,7 +133,7 @@ const ReceivedMessage = (props) => {
 };
 
 const SentMessage = (props) => {
-  const { text, uid, photoURL, displayName } = props.message;
+  const { text, uid } = props.message;
 
   const messageClass = uid === auth.currentUser.uid ? "sent" : "received";
 
